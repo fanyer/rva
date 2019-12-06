@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="预加载// 下面的例子会用到 User 和 Order 结构体type User struct &amp;#123;  gorm.Model  Username string  Orders Order&amp;#125;type Order struct &amp;#123;  gorm.Model  UserID uint  Price float64&amp;#125;// Preload 方法的参数应该是主结构体的字段名">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-06T06:55:20.929Z">
+<meta property="og:updated_time" content="2019-12-06T08:33:38.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Preloading (预加载)">
 <meta name="twitter:description" content="预加载// 下面的例子会用到 User 和 Order 结构体type User struct &amp;#123;  gorm.Model  Username string  Orders Order&amp;#125;type Order struct &amp;#123;  gorm.Model  UserID uint  Price float64&amp;#125;// Preload 方法的参数应该是主结构体的字段名">
@@ -123,7 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Preload(<span class="string">"Orders"</span>, <span class="function"><span class="keyword">func</span><span class="params">(db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> db.Order(<span class="string">"orders.amount DESC"</span>)</span><br><span class="line">&#125;).Find(&amp;users)</span><br><span class="line"><span class="comment">//// SELECT * FROM users;</span></span><br><span class="line"><span class="comment">//// SELECT * FROM orders WHERE user_id IN (1,2,3,4) order by orders.amount DESC;</span></span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.929Z" itemprop="dateModified">最后更新于 2019-12-06</time>
+                <time class="article-footer-updated" datetime="2019-12-06T08:33:38.904Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="associations.html" class="article-footer-prev" title="关联"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="method_chaining.html" class="article-footer-next" title="链式操作"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

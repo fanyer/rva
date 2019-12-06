@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="GORM 提供了 DB方法 ，可以从当前 *gorm.DB 连接内，获取一个通用的数据库接口*sql.DB // 获取通用 sql.DB 并使用其方法db.DB()// Pingdb.DB().Ping() 注意 如果数据库底层连接的不是一个 *sql.DB，比如在一个事务内，方法会返回nil。 连接池// SetMaxIdleCons 设置连接池中的最大闲置连接数。db.DB().SetMaxI">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-12-06T06:55:20.917Z">
+<meta property="og:updated_time" content="2019-12-06T08:33:38.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过数据库接口 sql.DB">
 <meta name="twitter:description" content="GORM 提供了 DB方法 ，可以从当前 *gorm.DB 连接内，获取一个通用的数据库接口*sql.DB // 获取通用 sql.DB 并使用其方法db.DB()// Pingdb.DB().Ping() 注意 如果数据库底层连接的不是一个 *sql.DB，比如在一个事务内，方法会返回nil。 连接池// SetMaxIdleCons 设置连接池中的最大闲置连接数。db.DB().SetMaxI">
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="连接池" class="article-heading"><a href="#连接池" class="headerlink" title="连接池"></a>连接池<a class="article-anchor" href="#连接池" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// SetMaxIdleCons 设置连接池中的最大闲置连接数。</span></span><br><span class="line">db.DB().SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// SetMaxOpenCons 设置数据库的最大连接数量。</span></span><br><span class="line">db.DB().SetMaxOpenConns(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// SetConnMaxLifetiment 设置连接的最大可复用时间。</span></span><br><span class="line">db.DB().SetConnMaxLifetime(time.Hour)</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.917Z" itemprop="dateModified">最后更新于 2019-12-06</time>
+                <time class="article-footer-updated" datetime="2019-12-06T08:33:38.895Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="sql_builder.html" class="article-footer-prev" title="原生 SQL 和 SQL 生成器"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="composite_primary_key.html" class="article-footer-next" title="复合主键"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="新しい方言を書くGORM provides official support for sqlite, mysql, postgres, mssql. You can add support for additional databases by creating a new dialect. When creating a new dialect, you must implement the d">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:updated_time" content="2019-12-06T06:55:20.899Z">
+<meta property="og:updated_time" content="2019-12-06T08:33:38.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dialect Specific Data Type">
 <meta name="twitter:description" content="新しい方言を書くGORM provides official support for sqlite, mysql, postgres, mssql. You can add support for additional databases by creating a new dialect. When creating a new dialect, you must implement the d">
@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">password := <span class="string">"0654857340"</span></span><br><span class="line">metadata := json.RawMessage(<span class="string">`&#123;"is_archived": 0&#125;`</span>)</span><br><span class="line">sampleDoc := Document&#123;</span><br><span class="line">  Body: <span class="string">"This is a test document"</span>,</span><br><span class="line">  Metadata: postgres.Jsonb&#123; metadata &#125;,</span><br><span class="line">  Secrets: postgres.Hstore&#123;<span class="string">"password"</span>: &amp;password&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//insert sampleDoc into the database</span></span><br><span class="line">db.Create(&amp;sampleDoc)</span><br><span class="line"></span><br><span class="line"><span class="comment">//retrieve the fields again to confirm if they were inserted correctly</span></span><br><span class="line">resultDoc := Document&#123;&#125;</span><br><span class="line">db.Where(<span class="string">"id = ?"</span>, sampleDoc.ID).First(&amp;resultDoc)</span><br><span class="line"></span><br><span class="line">metadataIsEqual := reflect.DeepEqual(resultDoc.Metadata, sampleDoc.Metadata)</span><br><span class="line">secretsIsEqual := reflect.DeepEqual(resultDoc.Secrets, sampleDoc.Secrets)</span><br><span class="line"></span><br><span class="line"><span class="comment">// this should print "true"</span></span><br><span class="line">fmt.Println(<span class="string">"Inserted fields are as expected:"</span>, metadataIsEqual &amp;&amp; secretsIsEqual)</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.899Z" itemprop="dateModified">Last updated: 2019-12-06</time>
+                <time class="article-footer-updated" datetime="2019-12-06T08:33:38.872Z" itemprop="dateModified">Last updated: 2019-12-06</time>
 <a href="write_plugins.html" class="article-footer-prev" title="Write Plugins"><i class="fa fa-chevron-left"></i><span>前へ</span></a><a href="logger.html" class="article-footer-next" title="ロガー"><span>次へ</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

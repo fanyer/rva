@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="オブジェクトのライフサイクルフックとは生成/参照/更新/削除の前後に呼ばれる関数のことです。 If you have defined specified methods for a model, it will be called automatically when creating, updating, querying, deleting, and if any callback retur">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:updated_time" content="2019-12-06T06:55:20.902Z">
+<meta property="og:updated_time" content="2019-12-06T08:33:38.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="フック">
 <meta name="twitter:description" content="オブジェクトのライフサイクルフックとは生成/参照/更新/削除の前後に呼ばれる関数のことです。 If you have defined specified methods for a model, it will be called automatically when creating, updating, querying, deleting, and if any callback retur">
@@ -137,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">unc (u *User) AfterFind() (err error) &#123;</span><br><span class="line">  <span class="keyword">if</span> u.MemberShip == <span class="string">""</span> &#123;</span><br><span class="line">    u.MemberShip = <span class="string">"user"</span></span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.902Z" itemprop="dateModified">Last updated: 2019-12-06</time>
+                <time class="article-footer-updated" datetime="2019-12-06T08:33:38.875Z" itemprop="dateModified">Last updated: 2019-12-06</time>
 <a href="error_handling.html" class="article-footer-prev" title="エラーハンドリング"><i class="fa fa-chevron-left"></i><span>前へ</span></a><a href="transactions.html" class="article-footer-next" title="トランザクション"><span>次へ</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="GORM provides the method DB which returns a generic database interface *sql.DB from the current *gorm.DB connection // 一般的なデータベースオブジェクト sql.DB をその機能を利用するために取得しますdb.DB()// Pingdb.DB().Ping() NOTE If th">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:updated_time" content="2019-12-06T06:55:20.900Z">
+<meta property="og:updated_time" content="2019-12-06T08:33:38.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一般的なデータベースインタフェース sql.DB">
 <meta name="twitter:description" content="GORM provides the method DB which returns a generic database interface *sql.DB from the current *gorm.DB connection // 一般的なデータベースオブジェクト sql.DB をその機能を利用するために取得しますdb.DB()// Pingdb.DB().Ping() NOTE If th">
@@ -121,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="コネクションプール" class="article-heading"><a href="#コネクションプール" class="headerlink" title="コネクションプール"></a>コネクションプール<a class="article-anchor" href="#コネクションプール" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// SetMaxIdleConnsはアイドル状態のコネクションプール内の最大数を設定します</span></span><br><span class="line">db.DB().SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// SetMaxOpenConnsは接続済みのデータベースコネクションの最大数を設定します</span></span><br><span class="line">db.DB().SetMaxOpenConns(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// SetConnMaxLifetimeは再利用され得る最長時間を設定します</span></span><br><span class="line">db.DB().SetConnMaxLifetime(time.Hour)</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.900Z" itemprop="dateModified">Last updated: 2019-12-06</time>
+                <time class="article-footer-updated" datetime="2019-12-06T08:33:38.873Z" itemprop="dateModified">Last updated: 2019-12-06</time>
 <a href="sql_builder.html" class="article-footer-prev" title="素のSQLとSQLビルダー"><i class="fa fa-chevron-left"></i><span>前へ</span></a><a href="composite_primary_key.html" class="article-footer-next" title="複合主キー"><span>次へ</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
