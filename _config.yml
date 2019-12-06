@@ -1,0 +1,48 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: RVA
+subtitle: The fantastic Bridge library for React, Vue, Angular.
+description: The fantastic Bridge library for React, Vue, Angular.
+author: Jinzhu
+author_url: https://github.com/fanyer
+language: en
+timezone: UTC
+source_dir: pages
+
+# URL
+url: http://rva.js.org/
+root: /rva/
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Start Guide
+start: "npm i -S @didi/rva"
+
+# Common Configuration
+twitter: iofanyer
+github: fanyer/rva
+google_tag_manager: GTM-WSNPD75
+
+# Writing
+new_post_name: :title.md # File name of new posts
+external_link: true # Open external links in new tab
+filename_case: 0
+relative_link: false
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: '  '
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: navy  # based from hexo offical site
+
+deploy:
+  type: git
+  repository: https://github.com/fanyer/rva.git
+  branch: gh-pages
