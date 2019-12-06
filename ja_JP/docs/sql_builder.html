@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="素のSQLを実行する素のSQLを実行します。これは他のメソッドとつなげることはできません。 db.Exec(&quot;DROP TABLE users;&quot;)db.Exec(&quot;UPDATE orders SET shipped_at=? WHERE id IN (?)&quot;, time.Now(), []int64&amp;#123;11,22,33&amp;#125;)// Scantype Result struct &amp;#">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLビルダー">
 <meta name="twitter:description" content="素のSQLを実行する素のSQLを実行します。これは他のメソッドとつなげることはできません。 db.Exec(&quot;DROP TABLE users;&quot;)db.Exec(&quot;UPDATE orders SET shipped_at=? WHERE id IN (?)&quot;, time.Now(), []int64&amp;#123;11,22,33&amp;#125;)// Scantype Result struct &amp;#">
@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="sql-Rowsをモデルに変換します" class="article-heading"><a href="#sql-Rowsをモデルに変換します" class="headerlink" title="sql.Rowsをモデルに変換します"></a><code>sql.Rows</code>をモデルに変換します<a class="article-anchor" href="#sql-Rowsをモデルに変換します" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">rows, err := db.Model(&amp;User&#123;&#125;).Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>).Select(<span class="string">"name, age, email"</span>).Rows() <span class="comment">// (*sql.Rows, error)</span></span><br><span class="line"><span class="keyword">defer</span> rows.Close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">  <span class="keyword">var</span> user User</span><br><span class="line">  <span class="comment">// ScanRowsは1行をuserに変換します</span></span><br><span class="line">  db.ScanRows(rows, &amp;user)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 何らかの処理を行います</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">Last updated: 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.907Z" itemprop="dateModified">Last updated: 2019-12-06</time>
 <a href="migration.html" class="article-footer-prev" title="マイグレーション"><i class="fa fa-chevron-left"></i><span>前へ</span></a><a href="generic_interface.html" class="article-footer-next" title="一般的なデータベースインタフェース"><span>次へ</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

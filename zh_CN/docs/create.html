@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="创建记录user := User&amp;#123;Name: &quot;Jinzhu&quot;, Age: 18, Birthday: time.Now()&amp;#125;db.NewRecord(user) // =&amp;gt; 主键为空返回`true`db.Create(&amp;amp;user)db.NewRecord(user) // =&amp;gt; 创建`user`后返回`false` 默认值你可以通过 tag 定义字段的默认">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建">
 <meta name="twitter:description" content="创建记录user := User&amp;#123;Name: &quot;Jinzhu&quot;, Age: 18, Birthday: time.Now()&amp;#125;db.NewRecord(user) // =&amp;gt; 主键为空返回`true`db.Create(&amp;amp;user)db.NewRecord(user) // =&amp;gt; 创建`user`后返回`false` 默认值你可以通过 tag 定义字段的默认">
@@ -127,7 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="扩展创建选项" class="article-heading"><a href="#扩展创建选项" class="headerlink" title="扩展创建选项"></a>扩展创建选项<a class="article-anchor" href="#扩展创建选项" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 为Instert语句添加扩展SQL选项</span></span><br><span class="line">db.Set(<span class="string">"gorm:insert_option"</span>, <span class="string">"ON CONFLICT"</span>).Create(&amp;product)</span><br><span class="line"><span class="comment">// INSERT INTO products (name, code) VALUES ("name", "code") ON CONFLICT;</span></span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.914Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="connecting_to_the_database.html" class="article-footer-prev" title="连接数据库"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="query.html" class="article-footer-next" title="查询"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

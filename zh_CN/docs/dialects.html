@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="创建新方言GORM 官方支持以下几种方言：sqlite, mysql, postgres, mssql. 你可以通过创建一个新的方言来为其它数据库提供支持。 当你创建一个新方言的时候，你必须实现 the dialect interface 接口。 某些数据库可能兼容 mysql 或 postgres 方言，此时你可以直接使用现有方言。 方言的特殊类型某些 SQL 的方言包含特殊的、非标准的类型，比">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="方言的特殊类型">
 <meta name="twitter:description" content="创建新方言GORM 官方支持以下几种方言：sqlite, mysql, postgres, mssql. 你可以通过创建一个新的方言来为其它数据库提供支持。 当你创建一个新方言的时候，你必须实现 the dialect interface 接口。 某些数据库可能兼容 mysql 或 postgres 方言，此时你可以直接使用现有方言。 方言的特殊类型某些 SQL 的方言包含特殊的、非标准的类型，比">
@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">password := <span class="string">"0654857340"</span></span><br><span class="line">metadata := json.RawMessage(<span class="string">`&#123;"is_archived": 0&#125;`</span>)</span><br><span class="line">sampleDoc := Document&#123;</span><br><span class="line">  Body: <span class="string">"This is a test document"</span>,</span><br><span class="line">  Metadata: postgres.Jsonb&#123; metadata &#125;,</span><br><span class="line">  Secrets: postgres.Hstore&#123;<span class="string">"password"</span>: &amp;password&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入 sampleDoc 到数据库</span></span><br><span class="line">db.Create(&amp;sampleDoc)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取出记录，以确定记录是否正确插入</span></span><br><span class="line">resultDoc := Document&#123;&#125;</span><br><span class="line">db.Where(<span class="string">"id = ?"</span>, sampleDoc.ID).First(&amp;resultDoc)</span><br><span class="line"></span><br><span class="line">metadataIsEqual := reflect.DeepEqual(resultDoc.Metadata, sampleDoc.Metadata)</span><br><span class="line">secretsIsEqual := reflect.DeepEqual(resultDoc.Secrets, sampleDoc.Secrets)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 应该输出 "true"</span></span><br><span class="line">fmt.Println(<span class="string">"Inserted fields are as expected:"</span>, metadataIsEqual &amp;&amp; secretsIsEqual)</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.916Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="write_plugins.html" class="article-footer-prev" title="创建插件"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="logger.html" class="article-footer-next" title="自定义Logger"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="全フィールドの更新Save は SQL を実行する際にすべてのフィールドを含みます。 db.First(&amp;amp;user)user.Name = &quot;jinzhu 2&quot;user.Age = 100db.Save(&amp;amp;user)//// UPDATE users SET name=&apos;jinzhu 2&apos;, age=100, birthday=&apos;2016-01-01&apos;, updated_at =">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Update">
 <meta name="twitter:description" content="全フィールドの更新Save は SQL を実行する際にすべてのフィールドを含みます。 db.First(&amp;amp;user)user.Name = &quot;jinzhu 2&quot;user.Age = 100db.Save(&amp;amp;user)//// UPDATE users SET name=&apos;jinzhu 2&apos;, age=100, birthday=&apos;2016-01-01&apos;, updated_at =">
@@ -131,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="その他のオプション" class="article-heading"><a href="#その他のオプション" class="headerlink" title="その他のオプション"></a>その他のオプション<a class="article-anchor" href="#その他のオプション" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Add extra SQL option for updating SQL</span></span><br><span class="line">db.Model(&amp;user).Set(<span class="string">"gorm:update_option"</span>, <span class="string">"OPTION (OPTIMIZE FOR UNKNOWN)"</span>).Update(<span class="string">"name"</span>, <span class="string">"hello"</span>)</span><br><span class="line"><span class="comment">//// UPDATE users SET name='hello', updated_at = '2013-11-17 21:34:10' WHERE id=111 OPTION (OPTIMIZE FOR UNKNOWN);</span></span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">Last updated: 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.907Z" itemprop="dateModified">Last updated: 2019-12-06</time>
 <a href="query.html" class="article-footer-prev" title="Query"><i class="fa fa-chevron-left"></i><span>前へ</span></a><a href="delete.html" class="article-footer-next" title="Delete"><span>次へ</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

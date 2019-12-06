@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="Go的错误处理是很重要的 建议您在调用任何 立即执行方法 后进行错误检查 错误处理GORM中的错误处理与惯用的Go代码不同，因为它具有可链接的API，但仍然易于实现。 如果发生任何错误，GORM将设置* gorm.DB的错误字段，可以这样检查： if err := db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;).First(&amp;amp;user).Error; err != nil &amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="错误处理">
 <meta name="twitter:description" content="Go的错误处理是很重要的 建议您在调用任何 立即执行方法 后进行错误检查 错误处理GORM中的错误处理与惯用的Go代码不同，因为它具有可链接的API，但仍然易于实现。 如果发生任何错误，GORM将设置* gorm.DB的错误字段，可以这样检查： if err := db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;).First(&amp;amp;user).Error; err != nil &amp;">
@@ -128,7 +128,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 检查是否为 RecordNotFound 错误</span></span><br><span class="line">db.Where(<span class="string">"name = ?"</span>, <span class="string">"hello world"</span>).First(&amp;user).RecordNotFound()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> db.Model(&amp;user).Related(&amp;credit_card).RecordNotFound() &#123;</span><br><span class="line">  <span class="comment">// 未找到记录</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err := db.Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>).First(&amp;user).Error; gorm.IsRecordNotFoundError(err) &#123;</span><br><span class="line">  <span class="comment">// 未找到记录</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.917Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="method_chaining.html" class="article-footer-prev" title="链式操作"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="hooks.html" class="article-footer-next" title="钩子"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
