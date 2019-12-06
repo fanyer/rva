@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>约定 | RVA - The fantastic Bridge library for React, Vue, Angular.</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://http://rva.js.org/zh_CN/docs/conventions.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://http://rva.js.org/docs/conventions.html">
+    
+      <link rel="alternative" hreflang="zh_CN" href="http://http://rva.js.org/zh_CN/docs/conventions.html">
+    
+      <link rel="alternative" hreflang="ja_JP" href="http://http://rva.js.org/ja_JP/docs/conventions.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.8.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="RVA">
+  <!-- Open Graph -->
+  <meta name="description" content="gorm.Modelgorm.Model 是一个包含了ID, CreatedAt, UpdatedAt, DeletedAt四个字段的GoLang结构体。 你可以将它嵌入到你自己的模型中，当然你也可以完全使用自己的模型。 // gorm.Model 定义type Model struct &amp;#123;  ID        uint `gorm:&quot;primary_key&quot;`  CreatedAt">
+<meta property="og:type" content="website">
+<meta property="og:title" content="约定">
+<meta property="og:url" content="http://http://rva.js.org/zh_CN/docs/conventions.html">
+<meta property="og:site_name" content="RVA">
+<meta property="og:description" content="gorm.Modelgorm.Model 是一个包含了ID, CreatedAt, UpdatedAt, DeletedAt四个字段的GoLang结构体。 你可以将它嵌入到你自己的模型中，当然你也可以完全使用自己的模型。 // gorm.Model 定义type Model struct &amp;#123;  ID        uint `gorm:&quot;primary_key&quot;`  CreatedAt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="约定">
+<meta name="twitter:description" content="gorm.Modelgorm.Model 是一个包含了ID, CreatedAt, UpdatedAt, DeletedAt四个字段的GoLang结构体。 你可以将它嵌入到你自己的模型中，当然你也可以完全使用自己的模型。 // gorm.Model 定义type Model struct &amp;#123;  ID        uint `gorm:&quot;primary_key&quot;`  CreatedAt">
+<meta name="twitter:site" content="iofanyer">
+  <!-- Google Tag Manager -->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSNPD75');</script>
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh_CN/" id="logo">RVA</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh_CN/" class="main-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="搜索文档...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/conventions.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh_CN" selected>简体中文</option>
+        
+          <option value="ja_JP">日本語</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">约定</h1>
+                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/zh_CN/docs/conventions.md" class="article-edit-link" title="改进此文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="gorm-Model" class="article-heading"><a href="#gorm-Model" class="headerlink" title="gorm.Model"></a>gorm.Model<a class="article-anchor" href="#gorm-Model" aria-hidden="true"></a></h2><p><code>gorm.Model</code> 是一个包含了<code>ID</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>, <code>DeletedAt</code>四个字段的GoLang结构体。</p>
+<p>你可以将它嵌入到你自己的模型中，当然你也可以完全使用自己的模型。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gorm.Model 定义</span></span><br><span class="line"><span class="keyword">type</span> Model <span class="keyword">struct</span> &#123;</span><br><span class="line">  ID        <span class="keyword">uint</span> <span class="string">`gorm:"primary_key"`</span></span><br><span class="line">  CreatedAt time.Time</span><br><span class="line">  UpdatedAt time.Time</span><br><span class="line">  DeletedAt *time.Time</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Inject fields `ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt` into model `User`</span></span><br><span class="line"><span class="comment">// 将 `ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt`字段注入到`User`模型中</span></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">  gorm.Model</span><br><span class="line">  Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用gorm.Model定义模型</span></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">  ID   <span class="keyword">int</span></span><br><span class="line">  Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ID-作为主键" class="article-heading"><a href="#ID-作为主键" class="headerlink" title="ID 作为主键"></a><code>ID</code> 作为主键<a class="article-anchor" href="#ID-作为主键" aria-hidden="true"></a></h2><p>GORM 默认会使用名为<code>ID</code>的字段作为表的主键。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">  ID   <span class="keyword">string</span> <span class="comment">// 名为`ID`的字段会默认作为表的主键</span></span><br><span class="line">  Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用`AnimalID`作为主键</span></span><br><span class="line"><span class="keyword">type</span> Animal <span class="keyword">struct</span> &#123;</span><br><span class="line">  AnimalID <span class="keyword">int64</span> <span class="string">`gorm:"primary_key"`</span></span><br><span class="line">  Name     <span class="keyword">string</span></span><br><span class="line">  Age      <span class="keyword">int64</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="表名（Table-Name）" class="article-heading"><a href="#表名（Table-Name）" class="headerlink" title="表名（Table Name）"></a>表名（Table Name）<a class="article-anchor" href="#表名（Table-Name）" aria-hidden="true"></a></h2><p>表名默认就是结构体名称的复数，例如：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;&#125; <span class="comment">// 默认表名为 `users`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过TableName方法将User表命名为`profiles`</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(User)</span> <span class="title">TableName</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"profiles"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(u User)</span> <span class="title">TableName</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> u.Role == <span class="string">"admin"</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"admin_users"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"users"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关闭复数表名，如果设置为true，`User`表的表名就会是`user`，而不是`users`</span></span><br><span class="line">db.SingularTable(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="指定表名称" class="article-heading"><a href="#指定表名称" class="headerlink" title="指定表名称"></a>指定表名称<a class="article-anchor" href="#指定表名称" aria-hidden="true"></a></h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用User结构体创建名为`deleted_users`的表</span></span><br><span class="line">db.Table(<span class="string">"deleted_users"</span>).CreateTable(&amp;User&#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> deleted_users []User</span><br><span class="line">db.Table(<span class="string">"deleted_users"</span>).Find(&amp;deleted_users)</span><br><span class="line"><span class="comment">//// SELECT * FROM deleted_users;</span></span><br><span class="line"></span><br><span class="line">db.Table(<span class="string">"deleted_users"</span>).Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>).Delete()</span><br><span class="line"><span class="comment">//// DELETE FROM deleted_users WHERE name = 'jinzhu';</span></span><br></pre></td></tr></table></figure>
+<h3 id="更改默认表名称（table-name）" class="article-heading"><a href="#更改默认表名称（table-name）" class="headerlink" title="更改默认表名称（table name）"></a>更改默认表名称（table name）<a class="article-anchor" href="#更改默认表名称（table-name）" aria-hidden="true"></a></h3><p>你可以通过定义<code>DefaultTableNameHandler</code>来设置默认表名的命名规则</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">gorm.DefaultTableNameHandler = <span class="function"><span class="keyword">func</span> <span class="params">(db *gorm.DB, defaultTableName <span class="keyword">string</span>)</span> <span class="title">string</span></span>  &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"prefix_"</span> + defaultTableName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="下划线分割命名（Snake-Case）的列名" class="article-heading"><a href="#下划线分割命名（Snake-Case）的列名" class="headerlink" title="下划线分割命名（Snake Case）的列名"></a>下划线分割命名（Snake Case）的列名<a class="article-anchor" href="#下划线分割命名（Snake-Case）的列名" aria-hidden="true"></a></h2><p>列名由字段名称进行下划线分割来生成</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">  ID        <span class="keyword">uint</span>      <span class="comment">// 列名为`id`</span></span><br><span class="line">  Name      <span class="keyword">string</span>    <span class="comment">// 列名为 `name`</span></span><br><span class="line">  Birthday  time.Time <span class="comment">// 列名为 `birthday`</span></span><br><span class="line">  CreatedAt time.Time <span class="comment">// 列名为 `created_at`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重写列名</span></span><br><span class="line"><span class="keyword">type</span> Animal <span class="keyword">struct</span> &#123;</span><br><span class="line">    AnimalId    <span class="keyword">int64</span>     <span class="string">`gorm:"column:beast_id"`</span>         <span class="comment">// 设置列名为 `beast_id`</span></span><br><span class="line">    Birthday    time.Time <span class="string">`gorm:"column:day_of_the_beast"`</span> <span class="comment">// 设置列名为 `day_of_the_beast`</span></span><br><span class="line">    Age         <span class="keyword">int64</span>     <span class="string">`gorm:"column:age_of_the_beast"`</span> <span class="comment">//设置列名为 `age_of_the_beast`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="时间点（Timestamp）跟踪" class="article-heading"><a href="#时间点（Timestamp）跟踪" class="headerlink" title="时间点（Timestamp）跟踪"></a>时间点（Timestamp）跟踪<a class="article-anchor" href="#时间点（Timestamp）跟踪" aria-hidden="true"></a></h2><h3 id="CreatedAt" class="article-heading"><a href="#CreatedAt" class="headerlink" title="CreatedAt"></a>CreatedAt<a class="article-anchor" href="#CreatedAt" aria-hidden="true"></a></h3><p>如果模型有 <code>CreatedAt</code>字段，该字段的值将会是初次创建记录的时间。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Create(&amp;user) <span class="comment">// `CreatedAt`将会是当前时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以使用`Update`方法来改变`CreateAt`的值</span></span><br><span class="line">db.Model(&amp;user).Update(<span class="string">"CreatedAt"</span>, time.Now())</span><br></pre></td></tr></table></figure>
+<h3 id="UpdatedAt" class="article-heading"><a href="#UpdatedAt" class="headerlink" title="UpdatedAt"></a>UpdatedAt<a class="article-anchor" href="#UpdatedAt" aria-hidden="true"></a></h3><p>如果模型有<code>UpdatedAt</code>字段，该字段的值将会是每次更新记录的时间。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Save(&amp;user) <span class="comment">// `UpdatedAt`将会是当前时间</span></span><br><span class="line"></span><br><span class="line">db.Model(&amp;user).Update(<span class="string">"name"</span>, <span class="string">"jinzhu"</span>) <span class="comment">// `UpdatedAt`将会是当前时间</span></span><br></pre></td></tr></table></figure>
+<h3 id="DeletedAt" class="article-heading"><a href="#DeletedAt" class="headerlink" title="DeletedAt"></a>DeletedAt<a class="article-anchor" href="#DeletedAt" aria-hidden="true"></a></h3><p>如果模型有<code>DeletedAt</code>字段，调用<code>Delete</code>删除该记录时，将会设置<code>DeletedAt</code>字段为当前时间，而不是直接将记录从数据库中删除。 什么是 <a href="/docs/delete.html#Soft-Delete">软删除</a></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+<a href="models.html" class="article-footer-prev" title="模型定义"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="connecting_to_the_database.html" class="article-footer-next" title="连接数据库"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gorm-Model"><span class="toc-text">gorm.Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ID-作为主键"><span class="toc-text">ID 作为主键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表名（Table-Name）"><span class="toc-text">表名（Table Name）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指定表名称"><span class="toc-text">指定表名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更改默认表名称（table-name）"><span class="toc-text">更改默认表名称（table name）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下划线分割命名（Snake-Case）的列名"><span class="toc-text">下划线分割命名（Snake Case）的列名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间点（Timestamp）跟踪"><span class="toc-text">时间点（Timestamp）跟踪</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CreatedAt"><span class="toc-text">CreatedAt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UpdatedAt"><span class="toc-text">UpdatedAt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DeletedAt"><span class="toc-text">DeletedAt</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">入门指南</strong><a href="index.html" class="sidebar-link">概览</a><a href="models.html" class="sidebar-link">模型定义</a><a href="conventions.html" class="sidebar-link current">惯例</a><a href="connecting_to_the_database.html" class="sidebar-link">连接数据库</a><strong class="sidebar-title">CRUD 接口</strong><a href="create.html" class="sidebar-link">创建</a><a href="query.html" class="sidebar-link">查询</a><a href="update.html" class="sidebar-link">更新</a><a href="delete.html" class="sidebar-link">删除</a><strong class="sidebar-title">关联</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link">Many To Many</a><a href="associations.html" class="sidebar-link">关联</a><a href="preload.html" class="sidebar-link">预加载</a><strong class="sidebar-title">教程</strong><a href="method_chaining.html" class="sidebar-link">链式操作</a><a href="error_handling.html" class="sidebar-link">错误处理</a><a href="hooks.html" class="sidebar-link">钩子</a><a href="transactions.html" class="sidebar-link">事务</a><a href="migration.html" class="sidebar-link">数据库迁移</a><a href="sql_builder.html" class="sidebar-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="sidebar-link">通用数据库接口</a><strong class="sidebar-title">高级主题</strong><a href="composite_primary_key.html" class="sidebar-link">复合主键</a><a href="write_plugins.html" class="sidebar-link">创建插件</a><a href="dialects.html" class="sidebar-link">GORM Dialects</a><a href="logger.html" class="sidebar-link">自定义Logger</a><a href="changelog.html" class="sidebar-link">更新日志</a><a href="/community.html" class="sidebar-link">社区</a><a href="/contribute.html" class="sidebar-link">贡献</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">翻译当前页面</a>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
+      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/fanyer/rva" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>首页</a>
+      </li>
+      <a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+    </ul>
+    
+      <strong class="mobile-nav-title">入门指南</strong><a href="index.html" class="mobile-nav-link">概览</a><a href="models.html" class="mobile-nav-link">模型定义</a><a href="conventions.html" class="mobile-nav-link current">惯例</a><a href="connecting_to_the_database.html" class="mobile-nav-link">连接数据库</a><strong class="mobile-nav-title">CRUD 接口</strong><a href="create.html" class="mobile-nav-link">创建</a><a href="query.html" class="mobile-nav-link">查询</a><a href="update.html" class="mobile-nav-link">更新</a><a href="delete.html" class="mobile-nav-link">删除</a><strong class="mobile-nav-title">关联</strong><a href="belongs_to.html" class="mobile-nav-link">Belongs To</a><a href="has_one.html" class="mobile-nav-link">Has One</a><a href="has_many.html" class="mobile-nav-link">Has Many</a><a href="many_to_many.html" class="mobile-nav-link">Many To Many</a><a href="associations.html" class="mobile-nav-link">关联</a><a href="preload.html" class="mobile-nav-link">预加载</a><strong class="mobile-nav-title">教程</strong><a href="method_chaining.html" class="mobile-nav-link">链式操作</a><a href="error_handling.html" class="mobile-nav-link">错误处理</a><a href="hooks.html" class="mobile-nav-link">钩子</a><a href="transactions.html" class="mobile-nav-link">事务</a><a href="migration.html" class="mobile-nav-link">数据库迁移</a><a href="sql_builder.html" class="mobile-nav-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="mobile-nav-link">通用数据库接口</a><strong class="mobile-nav-title">高级主题</strong><a href="composite_primary_key.html" class="mobile-nav-link">复合主键</a><a href="write_plugins.html" class="mobile-nav-link">创建插件</a><a href="dialects.html" class="mobile-nav-link">GORM Dialects</a><a href="logger.html" class="mobile-nav-link">自定义Logger</a><a href="changelog.html" class="mobile-nav-link">更新日志</a><a href="/community.html" class="mobile-nav-link">社区</a><a href="/contribute.html" class="mobile-nav-link">贡献</a><a href="/contribute.html#Translate-this-site" class="mobile-nav-link">翻译当前页面</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/conventions.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh_CN" selected>简体中文</option>
+      
+        <option value="ja_JP">日本語</option>
+      
+    </select>
+  </div>
+</nav>
+
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/js/code_expander.js"></script>
+<script src="/js/404_fix.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSNPD75" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Many To Many | RVA - The fantastic Bridge library for React, Vue, Angular.</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://http://rva.js.org/zh_CN/docs/many_to_many.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://http://rva.js.org/docs/many_to_many.html">
+    
+      <link rel="alternative" hreflang="zh_CN" href="http://http://rva.js.org/zh_CN/docs/many_to_many.html">
+    
+      <link rel="alternative" hreflang="ja_JP" href="http://http://rva.js.org/ja_JP/docs/many_to_many.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.8.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="RVA">
+  <!-- Open Graph -->
+  <meta name="description" content="Many To ManyMany to Many 在两个 model 中添加一张连接表。 比如，您的应用程序包含用户和语言，一个用户可以说多种语言，多个用户也可以说某一种语言。 // 用户拥有且属于多种语言，使用 `user_languages` 作为连接表type User struct &amp;#123;    gorm.Model    Languages         []Language `">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Many To Many">
+<meta property="og:url" content="http://http://rva.js.org/zh_CN/docs/many_to_many.html">
+<meta property="og:site_name" content="RVA">
+<meta property="og:description" content="Many To ManyMany to Many 在两个 model 中添加一张连接表。 比如，您的应用程序包含用户和语言，一个用户可以说多种语言，多个用户也可以说某一种语言。 // 用户拥有且属于多种语言，使用 `user_languages` 作为连接表type User struct &amp;#123;    gorm.Model    Languages         []Language `">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Many To Many">
+<meta name="twitter:description" content="Many To ManyMany to Many 在两个 model 中添加一张连接表。 比如，您的应用程序包含用户和语言，一个用户可以说多种语言，多个用户也可以说某一种语言。 // 用户拥有且属于多种语言，使用 `user_languages` 作为连接表type User struct &amp;#123;    gorm.Model    Languages         []Language `">
+<meta name="twitter:site" content="iofanyer">
+  <!-- Google Tag Manager -->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSNPD75');</script>
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh_CN/" id="logo">RVA</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh_CN/" class="main-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="搜索文档...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/many_to_many.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh_CN" selected>简体中文</option>
+        
+          <option value="ja_JP">日本語</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Many To Many</h1>
+                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/zh_CN/docs/many_to_many.md" class="article-edit-link" title="改进此文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Many-To-Many" class="article-heading"><a href="#Many-To-Many" class="headerlink" title="Many To Many"></a>Many To Many<a class="article-anchor" href="#Many-To-Many" aria-hidden="true"></a></h2><p>Many to Many 在两个 model 中添加一张连接表。</p>
+<p>比如，您的应用程序包含用户和语言，一个用户可以说多种语言，多个用户也可以说某一种语言。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用户拥有且属于多种语言，使用 `user_languages` 作为连接表</span></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">    gorm.Model</span><br><span class="line">    Languages         []Language <span class="string">`gorm:"many2many:user_languages;"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Language <span class="keyword">struct</span> &#123;</span><br><span class="line">    gorm.Model</span><br><span class="line">    Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="互引用关联" class="article-heading"><a href="#互引用关联" class="headerlink" title="互引用关联"></a>互引用关联<a class="article-anchor" href="#互引用关联" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Back-Reference，用户拥有且属于多种语言，使用 `user_languages` 作为连接表</span></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">    gorm.Model</span><br><span class="line">    Languages         []*Language <span class="string">`gorm:"many2many:user_languages;"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Language <span class="keyword">struct</span> &#123;</span><br><span class="line">    gorm.Model</span><br><span class="line">    Name <span class="keyword">string</span></span><br><span class="line">    Users             []*User     <span class="string">`gorm:"many2many:user_languages;"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> users []User</span><br><span class="line">language := Language&#123;&#125;</span><br><span class="line"></span><br><span class="line">db.First(&amp;language, <span class="string">"id = ?"</span>, <span class="number">111</span>)</span><br><span class="line"></span><br><span class="line">db.Model(&amp;language).Related(&amp;users,  <span class="string">"Users"</span>)</span><br><span class="line"><span class="comment">//// SELECT * FROM "users" INNER JOIN "user_languages" ON "user_languages"."user_id" = "users"."id" WHERE  ("user_languages"."language_id" IN ('111'))</span></span><br></pre></td></tr></table></figure>
+<h2 id="多外键" class="article-heading"><a href="#多外键" class="headerlink" title="多外键"></a>多外键<a class="article-anchor" href="#多外键" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> CustomizePerson <span class="keyword">struct</span> &#123;</span><br><span class="line">  IdPerson <span class="keyword">string</span>             <span class="string">`gorm:"primary_key:true"`</span></span><br><span class="line">  Accounts []CustomizeAccount <span class="string">`gorm:"many2many:PersonAccount;association_foreignkey:idAccount;foreignkey:idPerson"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> CustomizeAccount <span class="keyword">struct</span> &#123;</span><br><span class="line">  IdAccount <span class="keyword">string</span> <span class="string">`gorm:"primary_key:true"`</span></span><br><span class="line">  Name      <span class="keyword">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Foreign Keys，它将为这两个 struct 创建多对多关系，并且他们的关系将被保存到连接表 <code>PersonAccount</code> ，连接表的外键为 <code>customize_person_id_person</code> 和 <code>customize_account_id_account</code>.</p>
+<h2 id="连接表外键" class="article-heading"><a href="#连接表外键" class="headerlink" title="连接表外键"></a>连接表外键<a class="article-anchor" href="#连接表外键" aria-hidden="true"></a></h2><p>Jointable ForeignKey，如果你想改变连接表的外键，你可以使用标签 <code>association_jointable_foreignkey</code> 和 <code>jointable_foreignkey</code>.</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> CustomizePerson <span class="keyword">struct</span> &#123;</span><br><span class="line">  IdPerson <span class="keyword">string</span>             <span class="string">`gorm:"primary_key:true"`</span></span><br><span class="line">  Accounts []CustomizeAccount <span class="string">`gorm:"many2many:PersonAccount;foreignkey:idPerson;association_foreignkey:idAccount;association_jointable_foreignkey:account_id;jointable_foreignkey:person_id;"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> CustomizeAccount <span class="keyword">struct</span> &#123;</span><br><span class="line">  IdAccount <span class="keyword">string</span> <span class="string">`gorm:"primary_key:true"`</span></span><br><span class="line">  Name      <span class="keyword">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="自引用关联" class="article-heading"><a href="#自引用关联" class="headerlink" title="自引用关联"></a>自引用关联<a class="article-anchor" href="#自引用关联" aria-hidden="true"></a></h2><p>Self-Referencing，在自引用的多对多关系中，你必须在连接表中修改关联外键。</p>
+<p>使用属性名及其主键生成关联外键，使得关联外键与外键不同，比如：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">  gorm.Model</span><br><span class="line">  Friends []*User <span class="string">`gorm:"many2many:friendships;association_jointable_foreignkey:friend_id"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>GORM 会生成一个关联表，其外键为 <code>user_id</code> 和 <code>friend_id</code>，并用其保存自引用用户关系。</p>
+<p>然后你还是可以像正常关系一样操作它们，比如：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">DB.Preload(<span class="string">"Friends"</span>).First(&amp;user, <span class="string">"id = ?"</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">DB.Model(&amp;user).Association(<span class="string">"Friends"</span>).Append(&amp;User&#123;Name: <span class="string">"friend1"</span>&#125;, &amp;User&#123;Name: <span class="string">"friend2"</span>&#125;)</span><br><span class="line"></span><br><span class="line">DB.Model(&amp;user).Association(<span class="string">"Friends"</span>).Delete(&amp;User&#123;Name: <span class="string">"friend2"</span>&#125;)</span><br><span class="line"></span><br><span class="line">DB.Model(&amp;user).Association(<span class="string">"Friends"</span>).Replace(&amp;User&#123;Name: <span class="string">"new friend"</span>&#125;)</span><br><span class="line"></span><br><span class="line">DB.Model(&amp;user).Association(<span class="string">"Friends"</span>).Clear()</span><br><span class="line"></span><br><span class="line">DB.Model(&amp;user).Association(<span class="string">"Friends"</span>).Count()</span><br></pre></td></tr></table></figure>
+<h2 id="Many-To-Many-的使用" class="article-heading"><a href="#Many-To-Many-的使用" class="headerlink" title="Many To Many 的使用"></a>Many To Many 的使用<a class="article-anchor" href="#Many-To-Many-的使用" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Model(&amp;user).Related(&amp;languages, <span class="string">"Languages"</span>)</span><br><span class="line"><span class="comment">//// SELECT * FROM "languages" INNER JOIN "user_languages" ON "user_languages"."language_id" = "languages"."id" WHERE "user_languages"."user_id" = 111</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询 user 时会预加载 Languages</span></span><br><span class="line">db.Preload(<span class="string">"Languages"</span>).First(&amp;user)</span><br></pre></td></tr></table></figure>
+<p>高级用法请参阅： <a href="/docs/associations.html#Association-Mode">关联模式</a></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+<a href="has_many.html" class="article-footer-prev" title="Has Many"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="associations.html" class="article-footer-next" title="关联"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Many-To-Many"><span class="toc-text">Many To Many</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#互引用关联"><span class="toc-text">互引用关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多外键"><span class="toc-text">多外键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接表外键"><span class="toc-text">连接表外键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自引用关联"><span class="toc-text">自引用关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Many-To-Many-的使用"><span class="toc-text">Many To Many 的使用</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">入门指南</strong><a href="index.html" class="sidebar-link">概览</a><a href="models.html" class="sidebar-link">模型定义</a><a href="conventions.html" class="sidebar-link">惯例</a><a href="connecting_to_the_database.html" class="sidebar-link">连接数据库</a><strong class="sidebar-title">CRUD 接口</strong><a href="create.html" class="sidebar-link">创建</a><a href="query.html" class="sidebar-link">查询</a><a href="update.html" class="sidebar-link">更新</a><a href="delete.html" class="sidebar-link">删除</a><strong class="sidebar-title">关联</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link current">Many To Many</a><a href="associations.html" class="sidebar-link">关联</a><a href="preload.html" class="sidebar-link">预加载</a><strong class="sidebar-title">教程</strong><a href="method_chaining.html" class="sidebar-link">链式操作</a><a href="error_handling.html" class="sidebar-link">错误处理</a><a href="hooks.html" class="sidebar-link">钩子</a><a href="transactions.html" class="sidebar-link">事务</a><a href="migration.html" class="sidebar-link">数据库迁移</a><a href="sql_builder.html" class="sidebar-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="sidebar-link">通用数据库接口</a><strong class="sidebar-title">高级主题</strong><a href="composite_primary_key.html" class="sidebar-link">复合主键</a><a href="write_plugins.html" class="sidebar-link">创建插件</a><a href="dialects.html" class="sidebar-link">GORM Dialects</a><a href="logger.html" class="sidebar-link">自定义Logger</a><a href="changelog.html" class="sidebar-link">更新日志</a><a href="/community.html" class="sidebar-link">社区</a><a href="/contribute.html" class="sidebar-link">贡献</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">翻译当前页面</a>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
+      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/fanyer/rva" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>首页</a>
+      </li>
+      <a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+    </ul>
+    
+      <strong class="mobile-nav-title">入门指南</strong><a href="index.html" class="mobile-nav-link">概览</a><a href="models.html" class="mobile-nav-link">模型定义</a><a href="conventions.html" class="mobile-nav-link">惯例</a><a href="connecting_to_the_database.html" class="mobile-nav-link">连接数据库</a><strong class="mobile-nav-title">CRUD 接口</strong><a href="create.html" class="mobile-nav-link">创建</a><a href="query.html" class="mobile-nav-link">查询</a><a href="update.html" class="mobile-nav-link">更新</a><a href="delete.html" class="mobile-nav-link">删除</a><strong class="mobile-nav-title">关联</strong><a href="belongs_to.html" class="mobile-nav-link">Belongs To</a><a href="has_one.html" class="mobile-nav-link">Has One</a><a href="has_many.html" class="mobile-nav-link">Has Many</a><a href="many_to_many.html" class="mobile-nav-link current">Many To Many</a><a href="associations.html" class="mobile-nav-link">关联</a><a href="preload.html" class="mobile-nav-link">预加载</a><strong class="mobile-nav-title">教程</strong><a href="method_chaining.html" class="mobile-nav-link">链式操作</a><a href="error_handling.html" class="mobile-nav-link">错误处理</a><a href="hooks.html" class="mobile-nav-link">钩子</a><a href="transactions.html" class="mobile-nav-link">事务</a><a href="migration.html" class="mobile-nav-link">数据库迁移</a><a href="sql_builder.html" class="mobile-nav-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="mobile-nav-link">通用数据库接口</a><strong class="mobile-nav-title">高级主题</strong><a href="composite_primary_key.html" class="mobile-nav-link">复合主键</a><a href="write_plugins.html" class="mobile-nav-link">创建插件</a><a href="dialects.html" class="mobile-nav-link">GORM Dialects</a><a href="logger.html" class="mobile-nav-link">自定义Logger</a><a href="changelog.html" class="mobile-nav-link">更新日志</a><a href="/community.html" class="mobile-nav-link">社区</a><a href="/contribute.html" class="mobile-nav-link">贡献</a><a href="/contribute.html#Translate-this-site" class="mobile-nav-link">翻译当前页面</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/many_to_many.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh_CN" selected>简体中文</option>
+      
+        <option value="ja_JP">日本語</option>
+      
+    </select>
+  </div>
+</nav>
+
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/js/code_expander.js"></script>
+<script src="/js/404_fix.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSNPD75" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+</body>
+</html>

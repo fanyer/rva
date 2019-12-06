@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>链式操作 | RVA - The fantastic Bridge library for React, Vue, Angular.</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://http://rva.js.org/zh_CN/docs/method_chaining.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://http://rva.js.org/docs/method_chaining.html">
+    
+      <link rel="alternative" hreflang="zh_CN" href="http://http://rva.js.org/zh_CN/docs/method_chaining.html">
+    
+      <link rel="alternative" hreflang="ja_JP" href="http://http://rva.js.org/ja_JP/docs/method_chaining.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.8.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="RVA">
+  <!-- Open Graph -->
+  <meta name="description" content="链式操作Method Chaining，Gorm 实现了链式操作接口，所以你可以把代码写成这样： db, err := gorm.Open(&quot;postgres&quot;, &quot;user=gorm dbname=gorm sslmode=disable&quot;)// 创建一个新的 relationtx := db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;)// 添加更多查询条件if someCondit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="链式操作">
+<meta property="og:url" content="http://http://rva.js.org/zh_CN/docs/method_chaining.html">
+<meta property="og:site_name" content="RVA">
+<meta property="og:description" content="链式操作Method Chaining，Gorm 实现了链式操作接口，所以你可以把代码写成这样： db, err := gorm.Open(&quot;postgres&quot;, &quot;user=gorm dbname=gorm sslmode=disable&quot;)// 创建一个新的 relationtx := db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;)// 添加更多查询条件if someCondit">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="链式操作">
+<meta name="twitter:description" content="链式操作Method Chaining，Gorm 实现了链式操作接口，所以你可以把代码写成这样： db, err := gorm.Open(&quot;postgres&quot;, &quot;user=gorm dbname=gorm sslmode=disable&quot;)// 创建一个新的 relationtx := db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;)// 添加更多查询条件if someCondit">
+<meta name="twitter:site" content="iofanyer">
+  <!-- Google Tag Manager -->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSNPD75');</script>
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh_CN/" id="logo">RVA</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh_CN/" class="main-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="搜索文档...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/method_chaining.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh_CN" selected>简体中文</option>
+        
+          <option value="ja_JP">日本語</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">链式操作</h1>
+                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/zh_CN/docs/method_chaining.md" class="article-edit-link" title="改进此文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="链式操作" class="article-heading"><a href="#链式操作" class="headerlink" title="链式操作"></a>链式操作<a class="article-anchor" href="#链式操作" aria-hidden="true"></a></h2><p>Method Chaining，Gorm 实现了链式操作接口，所以你可以把代码写成这样：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db, err := gorm.Open(<span class="string">"postgres"</span>, <span class="string">"user=gorm dbname=gorm sslmode=disable"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个新的 relation</span></span><br><span class="line">tx := db.Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加更多查询条件</span></span><br><span class="line"><span class="keyword">if</span> someCondition &#123;</span><br><span class="line">    tx = tx.Where(<span class="string">"age = ?"</span>, <span class="number">20</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tx = tx.Where(<span class="string">"age = ?"</span>, <span class="number">30</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> yetAnotherCondition &#123;</span><br><span class="line">    tx = tx.Where(<span class="string">"active = ?"</span>, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在调用立即执行方法前不会生成 Query 语句，有时候这会很有用。</p>
+<p>比如你可以抽取一个函数来处理一些通用逻辑。</p>
+<h2 id="立即执行方法" class="article-heading"><a href="#立即执行方法" class="headerlink" title="立即执行方法"></a>立即执行方法<a class="article-anchor" href="#立即执行方法" aria-hidden="true"></a></h2><p>Immediate methods ，立即执行方法是指那些会立即生成 SQL 语句并发送到数据库的方法, 他们一般是 CRUD 方法，比如：</p>
+<p><code>Create</code>, <code>First</code>, <code>Find</code>, <code>Take</code>, <code>Save</code>, <code>UpdateXXX</code>, <code>Delete</code>, <code>Scan</code>, <code>Row</code>, <code>Rows</code>…</p>
+<p>这有一个基于上面链式方法代码的立即执行方法的例子：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">tx.Find(&amp;user)</span><br></pre></td></tr></table></figure>
+<p>生成的 Sql</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">where</span> <span class="keyword">name</span> = <span class="string">'jinzhu'</span> <span class="keyword">AND</span> age = <span class="number">30</span> <span class="keyword">AND</span> active = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="范围" class="article-heading"><a href="#范围" class="headerlink" title="范围"></a>范围<a class="article-anchor" href="#范围" aria-hidden="true"></a></h2><p>Scopes，Scope 是建立在链式操作的基础之上的。</p>
+<p>基于它，你可以抽取一些通用逻辑，写出更多可重用的函数库。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AmountGreaterThan1000</span><span class="params">(db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> db.Where(<span class="string">"amount &gt; ?"</span>, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PaidWithCreditCard</span><span class="params">(db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> db.Where(<span class="string">"pay_mode_sign = ?"</span>, <span class="string">"C"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PaidWithCod</span><span class="params">(db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> db.Where(<span class="string">"pay_mode_sign = ?"</span>, <span class="string">"C"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">OrderStatus</span><span class="params">(status []<span class="keyword">string</span>)</span> <span class="title">func</span> <span class="params">(db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">func</span> <span class="params">(db *gorm.DB)</span> *<span class="title">gorm</span>.<span class="title">DB</span></span> &#123;</span><br><span class="line">        <span class="keyword">return</span> db.Scopes(AmountGreaterThan1000).Where(<span class="string">"status IN (?)"</span>, status)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">db.Scopes(AmountGreaterThan1000, PaidWithCreditCard).Find(&amp;orders)</span><br><span class="line"><span class="comment">// 查询所有信用卡中金额大于 1000 的订单</span></span><br><span class="line"></span><br><span class="line">db.Scopes(AmountGreaterThan1000, PaidWithCod).Find(&amp;orders)</span><br><span class="line"><span class="comment">// 查询所有 Cod 中金额大于 1000 的订单</span></span><br><span class="line"></span><br><span class="line">db.Scopes(AmountGreaterThan1000, OrderStatus([]<span class="keyword">string</span>&#123;<span class="string">"paid"</span>, <span class="string">"shipped"</span>&#125;)).Find(&amp;orders)</span><br><span class="line"><span class="comment">// 查询所有已付款、已发货中金额大于 1000 的订单</span></span><br></pre></td></tr></table></figure>
+<h2 id="多个立即执行方法" class="article-heading"><a href="#多个立即执行方法" class="headerlink" title="多个立即执行方法"></a>多个立即执行方法<a class="article-anchor" href="#多个立即执行方法" aria-hidden="true"></a></h2><p>Multiple Immediate Methods，在 GORM 中使用多个立即执行方法时，后一个立即执行方法会复用前一个 立即执行方法的条件 (不包括内联条件) 。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Where(<span class="string">"name LIKE ?"</span>, <span class="string">"jinzhu%"</span>).Find(&amp;users, <span class="string">"id IN (?)"</span>, []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;).Count(&amp;count)</span><br></pre></td></tr></table></figure>
+<p>生成的 Sql</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'jinzhu%'</span> <span class="keyword">AND</span> <span class="keyword">id</span> <span class="keyword">IN</span> (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">count</span>(*) <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'jinzhu%'</span></span><br></pre></td></tr></table></figure>
+<h2 id="线程安全" class="article-heading"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全<a class="article-anchor" href="#线程安全" aria-hidden="true"></a></h2><p>所有链式方法都会创建并克隆一个新的 DB 对象 (共享一个连接池)，GORM 在多 goroutine 中是并发安全的。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+<a href="preload.html" class="article-footer-prev" title="预加载"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="error_handling.html" class="article-footer-next" title="错误处理"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#链式操作"><span class="toc-text">链式操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#立即执行方法"><span class="toc-text">立即执行方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#范围"><span class="toc-text">范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多个立即执行方法"><span class="toc-text">多个立即执行方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程安全"><span class="toc-text">线程安全</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">入门指南</strong><a href="index.html" class="sidebar-link">概览</a><a href="models.html" class="sidebar-link">模型定义</a><a href="conventions.html" class="sidebar-link">惯例</a><a href="connecting_to_the_database.html" class="sidebar-link">连接数据库</a><strong class="sidebar-title">CRUD 接口</strong><a href="create.html" class="sidebar-link">创建</a><a href="query.html" class="sidebar-link">查询</a><a href="update.html" class="sidebar-link">更新</a><a href="delete.html" class="sidebar-link">删除</a><strong class="sidebar-title">关联</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link">Many To Many</a><a href="associations.html" class="sidebar-link">关联</a><a href="preload.html" class="sidebar-link">预加载</a><strong class="sidebar-title">教程</strong><a href="method_chaining.html" class="sidebar-link current">链式操作</a><a href="error_handling.html" class="sidebar-link">错误处理</a><a href="hooks.html" class="sidebar-link">钩子</a><a href="transactions.html" class="sidebar-link">事务</a><a href="migration.html" class="sidebar-link">数据库迁移</a><a href="sql_builder.html" class="sidebar-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="sidebar-link">通用数据库接口</a><strong class="sidebar-title">高级主题</strong><a href="composite_primary_key.html" class="sidebar-link">复合主键</a><a href="write_plugins.html" class="sidebar-link">创建插件</a><a href="dialects.html" class="sidebar-link">GORM Dialects</a><a href="logger.html" class="sidebar-link">自定义Logger</a><a href="changelog.html" class="sidebar-link">更新日志</a><a href="/community.html" class="sidebar-link">社区</a><a href="/contribute.html" class="sidebar-link">贡献</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">翻译当前页面</a>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
+      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/fanyer/rva" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>首页</a>
+      </li>
+      <a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+    </ul>
+    
+      <strong class="mobile-nav-title">入门指南</strong><a href="index.html" class="mobile-nav-link">概览</a><a href="models.html" class="mobile-nav-link">模型定义</a><a href="conventions.html" class="mobile-nav-link">惯例</a><a href="connecting_to_the_database.html" class="mobile-nav-link">连接数据库</a><strong class="mobile-nav-title">CRUD 接口</strong><a href="create.html" class="mobile-nav-link">创建</a><a href="query.html" class="mobile-nav-link">查询</a><a href="update.html" class="mobile-nav-link">更新</a><a href="delete.html" class="mobile-nav-link">删除</a><strong class="mobile-nav-title">关联</strong><a href="belongs_to.html" class="mobile-nav-link">Belongs To</a><a href="has_one.html" class="mobile-nav-link">Has One</a><a href="has_many.html" class="mobile-nav-link">Has Many</a><a href="many_to_many.html" class="mobile-nav-link">Many To Many</a><a href="associations.html" class="mobile-nav-link">关联</a><a href="preload.html" class="mobile-nav-link">预加载</a><strong class="mobile-nav-title">教程</strong><a href="method_chaining.html" class="mobile-nav-link current">链式操作</a><a href="error_handling.html" class="mobile-nav-link">错误处理</a><a href="hooks.html" class="mobile-nav-link">钩子</a><a href="transactions.html" class="mobile-nav-link">事务</a><a href="migration.html" class="mobile-nav-link">数据库迁移</a><a href="sql_builder.html" class="mobile-nav-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="mobile-nav-link">通用数据库接口</a><strong class="mobile-nav-title">高级主题</strong><a href="composite_primary_key.html" class="mobile-nav-link">复合主键</a><a href="write_plugins.html" class="mobile-nav-link">创建插件</a><a href="dialects.html" class="mobile-nav-link">GORM Dialects</a><a href="logger.html" class="mobile-nav-link">自定义Logger</a><a href="changelog.html" class="mobile-nav-link">更新日志</a><a href="/community.html" class="mobile-nav-link">社区</a><a href="/contribute.html" class="mobile-nav-link">贡献</a><a href="/contribute.html#Translate-this-site" class="mobile-nav-link">翻译当前页面</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/method_chaining.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh_CN" selected>简体中文</option>
+      
+        <option value="ja_JP">日本語</option>
+      
+    </select>
+  </div>
+</nav>
+
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/js/code_expander.js"></script>
+<script src="/js/404_fix.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSNPD75" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+</body>
+</html>

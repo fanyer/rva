@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>写插件 | RVA - The fantastic Bridge library for React, Vue, Angular.</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://http://rva.js.org/zh_CN/docs/write_plugins.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://http://rva.js.org/docs/write_plugins.html">
+    
+      <link rel="alternative" hreflang="zh_CN" href="http://http://rva.js.org/zh_CN/docs/write_plugins.html">
+    
+      <link rel="alternative" hreflang="ja_JP" href="http://http://rva.js.org/ja_JP/docs/write_plugins.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.8.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="RVA">
+  <!-- Open Graph -->
+  <meta name="description" content="GORM本身由Callbacks提供支持，因此您可以根据需要完全自定义GORM 注册新的callback注册新的callback到callbacks中 func updateCreated(scope *Scope) &amp;#123;    if scope.HasColumn(&quot;Created&quot;) &amp;#123;        scope.SetColumn(&quot;Created&quot;, NowFunc())">
+<meta property="og:type" content="website">
+<meta property="og:title" content="写插件">
+<meta property="og:url" content="http://http://rva.js.org/zh_CN/docs/write_plugins.html">
+<meta property="og:site_name" content="RVA">
+<meta property="og:description" content="GORM本身由Callbacks提供支持，因此您可以根据需要完全自定义GORM 注册新的callback注册新的callback到callbacks中 func updateCreated(scope *Scope) &amp;#123;    if scope.HasColumn(&quot;Created&quot;) &amp;#123;        scope.SetColumn(&quot;Created&quot;, NowFunc())">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="写插件">
+<meta name="twitter:description" content="GORM本身由Callbacks提供支持，因此您可以根据需要完全自定义GORM 注册新的callback注册新的callback到callbacks中 func updateCreated(scope *Scope) &amp;#123;    if scope.HasColumn(&quot;Created&quot;) &amp;#123;        scope.SetColumn(&quot;Created&quot;, NowFunc())">
+<meta name="twitter:site" content="iofanyer">
+  <!-- Google Tag Manager -->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSNPD75');</script>
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh_CN/" id="logo">RVA</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh_CN/" class="main-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="main-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="搜索文档...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/write_plugins.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh_CN" selected>简体中文</option>
+        
+          <option value="ja_JP">日本語</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">写插件</h1>
+                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/zh_CN/docs/write_plugins.md" class="article-edit-link" title="改进此文档"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>GORM本身由<code>Callbacks</code>提供支持，因此您可以根据需要完全自定义GORM</p>
+<h2 id="注册新的callback" class="article-heading"><a href="#注册新的callback" class="headerlink" title="注册新的callback"></a>注册新的callback<a class="article-anchor" href="#注册新的callback" aria-hidden="true"></a></h2><p>注册新的callback到callbacks中</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">updateCreated</span><span class="params">(scope *Scope)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> scope.HasColumn(<span class="string">"Created"</span>) &#123;</span><br><span class="line">        scope.SetColumn(<span class="string">"Created"</span>, NowFunc())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">db.Callback().Create().Register(<span class="string">"update_created_at"</span>, updateCreated)</span><br><span class="line"><span class="comment">// 注册Create进程的回调</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除现有的callback" class="article-heading"><a href="#删除现有的callback" class="headerlink" title="删除现有的callback"></a>删除现有的callback<a class="article-anchor" href="#删除现有的callback" aria-hidden="true"></a></h2><p>从callbacks中删除callback</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Callback().Create().Remove(<span class="string">"gorm:create"</span>)</span><br><span class="line"><span class="comment">// 从Create回调中删除`gorm:create`回调</span></span><br></pre></td></tr></table></figure>
+<h2 id="替换现有的callback" class="article-heading"><a href="#替换现有的callback" class="headerlink" title="替换现有的callback"></a>替换现有的callback<a class="article-anchor" href="#替换现有的callback" aria-hidden="true"></a></h2><p>替换同名callback</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Callback().Create().Replace(<span class="string">"gorm:create"</span>, newCreateFunction)</span><br><span class="line"><span class="comment">// 使用新函数`newCreateFunction`替换回调`gorm:create`用于创建过程</span></span><br></pre></td></tr></table></figure>
+<h2 id="注册callback顺序" class="article-heading"><a href="#注册callback顺序" class="headerlink" title="注册callback顺序"></a>注册callback顺序<a class="article-anchor" href="#注册callback顺序" aria-hidden="true"></a></h2><p>注册 callback 顺序</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">db.Callback().Create().Before(<span class="string">"gorm:create"</span>).Register(<span class="string">"update_created_at"</span>, updateCreated)</span><br><span class="line">db.Callback().Create().After(<span class="string">"gorm:create"</span>).Register(<span class="string">"update_created_at"</span>, updateCreated)</span><br><span class="line">db.Callback().Query().After(<span class="string">"gorm:query"</span>).Register(<span class="string">"my_plugin:after_query"</span>, afterQuery)</span><br><span class="line">db.Callback().Delete().After(<span class="string">"gorm:delete"</span>).Register(<span class="string">"my_plugin:after_delete"</span>, afterDelete)</span><br><span class="line">db.Callback().Update().Before(<span class="string">"gorm:update"</span>).Register(<span class="string">"my_plugin:before_update"</span>, beforeUpdate)</span><br><span class="line">db.Callback().Create().Before(<span class="string">"gorm:create"</span>).After(<span class="string">"gorm:before_create"</span>).Register(<span class="string">"my_plugin:before_create"</span>, beforeCreate)</span><br></pre></td></tr></table></figure>
+<h2 id="预定义回调" class="article-heading"><a href="#预定义回调" class="headerlink" title="预定义回调"></a>预定义回调<a class="article-anchor" href="#预定义回调" aria-hidden="true"></a></h2><p>GORM定义了回调以执行其CRUD操作，在开始编写插件之前检查它们。</p>
+<ul>
+<li><p><a href="https://github.com/jinzhu/gorm/blob/master/callback_create.go" target="_blank" rel="noopener">Create callbacks</a></p>
+</li>
+<li><p><a href="https://github.com/jinzhu/gorm/blob/master/callback_update.go" target="_blank" rel="noopener">Update callbacks</a></p>
+</li>
+<li><p><a href="https://github.com/jinzhu/gorm/blob/master/callback_query.go" target="_blank" rel="noopener">Query callbacks</a></p>
+</li>
+<li><p><a href="https://github.com/jinzhu/gorm/blob/master/callback_delete.go" target="_blank" rel="noopener">Delete callbacks</a></p>
+</li>
+<li><p>Row Query callbacks - 没有默认注册的 callback</p>
+</li>
+</ul>
+<p>Row Query callbacks 在运行 <code>Row</code> 或 <code>Rows</code> 时被调用，默认情况下它没有注册的回调，你可以注册一个新的回调：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">updateTableName</span><span class="params">(scope *gorm.Scope)</span></span> &#123;</span><br><span class="line">  scope.Search.Table(scope.TableName() + <span class="string">"_draft"</span>) <span class="comment">// 追加 `_draft` 到表名后</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">db.Callback().RowQuery().Register(<span class="string">"publish:update_table_name"</span>, updateTableName)</span><br></pre></td></tr></table></figure>
+<p>查阅所有可用 <a href="https://godoc.org/github.com/jinzhu/gorm" target="_blank" rel="noopener">API</a></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+<a href="composite_primary_key.html" class="article-footer-prev" title="复合主键"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="dialects.html" class="article-footer-next" title="GORM Dialects"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
+              <strong class="sidebar-title">内容</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册新的callback"><span class="toc-text">注册新的callback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除现有的callback"><span class="toc-text">删除现有的callback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换现有的callback"><span class="toc-text">替换现有的callback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册callback顺序"><span class="toc-text">注册callback顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预定义回调"><span class="toc-text">预定义回调</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">入门指南</strong><a href="index.html" class="sidebar-link">概览</a><a href="models.html" class="sidebar-link">模型定义</a><a href="conventions.html" class="sidebar-link">惯例</a><a href="connecting_to_the_database.html" class="sidebar-link">连接数据库</a><strong class="sidebar-title">CRUD 接口</strong><a href="create.html" class="sidebar-link">创建</a><a href="query.html" class="sidebar-link">查询</a><a href="update.html" class="sidebar-link">更新</a><a href="delete.html" class="sidebar-link">删除</a><strong class="sidebar-title">关联</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link">Many To Many</a><a href="associations.html" class="sidebar-link">关联</a><a href="preload.html" class="sidebar-link">预加载</a><strong class="sidebar-title">教程</strong><a href="method_chaining.html" class="sidebar-link">链式操作</a><a href="error_handling.html" class="sidebar-link">错误处理</a><a href="hooks.html" class="sidebar-link">钩子</a><a href="transactions.html" class="sidebar-link">事务</a><a href="migration.html" class="sidebar-link">数据库迁移</a><a href="sql_builder.html" class="sidebar-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="sidebar-link">通用数据库接口</a><strong class="sidebar-title">高级主题</strong><a href="composite_primary_key.html" class="sidebar-link">复合主键</a><a href="write_plugins.html" class="sidebar-link current">创建插件</a><a href="dialects.html" class="sidebar-link">GORM Dialects</a><a href="logger.html" class="sidebar-link">自定义Logger</a><a href="changelog.html" class="sidebar-link">更新日志</a><a href="/community.html" class="sidebar-link">社区</a><a href="/contribute.html" class="sidebar-link">贡献</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">翻译当前页面</a>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
+      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/fanyer/rva" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>首页</a>
+      </li>
+      <a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-book"></i>文档</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/zh_CN/" class="mobile-nav-link"><i class="fa fa-rocket"></i>贡献</a>
+    </ul>
+    
+      <strong class="mobile-nav-title">入门指南</strong><a href="index.html" class="mobile-nav-link">概览</a><a href="models.html" class="mobile-nav-link">模型定义</a><a href="conventions.html" class="mobile-nav-link">惯例</a><a href="connecting_to_the_database.html" class="mobile-nav-link">连接数据库</a><strong class="mobile-nav-title">CRUD 接口</strong><a href="create.html" class="mobile-nav-link">创建</a><a href="query.html" class="mobile-nav-link">查询</a><a href="update.html" class="mobile-nav-link">更新</a><a href="delete.html" class="mobile-nav-link">删除</a><strong class="mobile-nav-title">关联</strong><a href="belongs_to.html" class="mobile-nav-link">Belongs To</a><a href="has_one.html" class="mobile-nav-link">Has One</a><a href="has_many.html" class="mobile-nav-link">Has Many</a><a href="many_to_many.html" class="mobile-nav-link">Many To Many</a><a href="associations.html" class="mobile-nav-link">关联</a><a href="preload.html" class="mobile-nav-link">预加载</a><strong class="mobile-nav-title">教程</strong><a href="method_chaining.html" class="mobile-nav-link">链式操作</a><a href="error_handling.html" class="mobile-nav-link">错误处理</a><a href="hooks.html" class="mobile-nav-link">钩子</a><a href="transactions.html" class="mobile-nav-link">事务</a><a href="migration.html" class="mobile-nav-link">数据库迁移</a><a href="sql_builder.html" class="mobile-nav-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="mobile-nav-link">通用数据库接口</a><strong class="mobile-nav-title">高级主题</strong><a href="composite_primary_key.html" class="mobile-nav-link">复合主键</a><a href="write_plugins.html" class="mobile-nav-link current">创建插件</a><a href="dialects.html" class="mobile-nav-link">GORM Dialects</a><a href="logger.html" class="mobile-nav-link">自定义Logger</a><a href="changelog.html" class="mobile-nav-link">更新日志</a><a href="/community.html" class="mobile-nav-link">社区</a><a href="/contribute.html" class="mobile-nav-link">贡献</a><a href="/contribute.html#Translate-this-site" class="mobile-nav-link">翻译当前页面</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/write_plugins.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh_CN" selected>简体中文</option>
+      
+        <option value="ja_JP">日本語</option>
+      
+    </select>
+  </div>
+</nav>
+
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/js/code_expander.js"></script>
+<script src="/js/404_fix.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSNPD75" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+</body>
+</html>
