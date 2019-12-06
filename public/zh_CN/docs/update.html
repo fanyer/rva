@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="更新所有字段Save会更新所有字段，即使你没有赋值 db.First(&amp;amp;user)user.Name = &quot;jinzhu 2&quot;user.Age = 100db.Save(&amp;amp;user)//// UPDATE users SET name=&apos;jinzhu 2&apos;, age=100, birthday=&apos;2016-01-01&apos;, updated_at = &apos;2013-11-17 21:34">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新">
 <meta name="twitter:description" content="更新所有字段Save会更新所有字段，即使你没有赋值 db.First(&amp;amp;user)user.Name = &quot;jinzhu 2&quot;user.Age = 100db.Save(&amp;amp;user)//// UPDATE users SET name=&apos;jinzhu 2&apos;, age=100, birthday=&apos;2016-01-01&apos;, updated_at = &apos;2013-11-17 21:34">
@@ -131,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="其它更新选项" class="article-heading"><a href="#其它更新选项" class="headerlink" title="其它更新选项"></a>其它更新选项<a class="article-anchor" href="#其它更新选项" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 为 update SQL 添加其它的 SQL</span></span><br><span class="line">db.Model(&amp;user).Set(<span class="string">"gorm:update_option"</span>, <span class="string">"OPTION (OPTIMIZE FOR UNKNOWN)"</span>).Update(<span class="string">"name"</span>, <span class="string">"hello"</span>)</span><br><span class="line"><span class="comment">//// UPDATE users SET name='hello', updated_at = '2013-11-17 21:34:10' WHERE id=111 OPTION (OPTIMIZE FOR UNKNOWN);</span></span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.934Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="query.html" class="article-footer-prev" title="查询"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="delete.html" class="article-footer-next" title="删除"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -140,7 +140,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
-              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
               <strong class="sidebar-title">内容</strong>
               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#更新所有字段"><span class="toc-text">更新所有字段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新修改字段"><span class="toc-text">更新修改字段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新选定字段"><span class="toc-text">更新选定字段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无-Hooks-更新"><span class="toc-text">无 Hooks 更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量更新"><span class="toc-text">批量更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-SQL-表达式更新"><span class="toc-text">使用 SQL 表达式更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-Hooks-中的值"><span class="toc-text">修改 Hooks 中的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它更新选项"><span class="toc-text">其它更新选项</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
@@ -161,9 +160,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <footer id="footer" class="wrapper">
   <div class="inner">
     <div id="footer-copyright">
-      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">fanyer</a><br>
       Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
-      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+      <a href="https://github.com/" target="_blank">Source Code of this site</a>
     </div>
     <div id="footer-links">
       <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>

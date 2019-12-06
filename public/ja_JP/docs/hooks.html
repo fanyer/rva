@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="オブジェクトのライフサイクルフックとは生成/参照/更新/削除の前後に呼ばれる関数のことです。 If you have defined specified methods for a model, it will be called automatically when creating, updating, querying, deleting, and if any callback retur">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="フック">
 <meta name="twitter:description" content="オブジェクトのライフサイクルフックとは生成/参照/更新/削除の前後に呼ばれる関数のことです。 If you have defined specified methods for a model, it will be called automatically when creating, updating, querying, deleting, and if any callback retur">
@@ -137,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">unc (u *User) AfterFind() (err error) &#123;</span><br><span class="line">  <span class="keyword">if</span> u.MemberShip == <span class="string">""</span> &#123;</span><br><span class="line">    u.MemberShip = <span class="string">"user"</span></span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">Last updated: 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.902Z" itemprop="dateModified">Last updated: 2019-12-06</time>
 <a href="error_handling.html" class="article-footer-prev" title="エラーハンドリング"><i class="fa fa-chevron-left"></i><span>前へ</span></a><a href="transactions.html" class="article-footer-next" title="トランザクション"><span>次へ</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -146,7 +146,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
-              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
               <strong class="sidebar-title">Contents</strong>
               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#オブジェクトのライフサイクル"><span class="toc-text">オブジェクトのライフサイクル</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#フック"><span class="toc-text">フック</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#オブジェクトの生成"><span class="toc-text">オブジェクトの生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#オブジェクトの更新"><span class="toc-text">オブジェクトの更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#オブジェクトの削除"><span class="toc-text">オブジェクトの削除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#オブジェクトの参照"><span class="toc-text">オブジェクトの参照</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">トップに戻る</a>
@@ -167,9 +166,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <footer id="footer" class="wrapper">
   <div class="inner">
     <div id="footer-copyright">
-      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">fanyer</a><br>
       Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
-      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+      <a href="https://github.com/" target="_blank">Source Code of this site</a>
     </div>
     <div id="footer-links">
       <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>

@@ -51,7 +51,7 @@
 <meta property="og:site_name" content="RVA">
 <meta property="og:description" content="查询//通过主键查询第一条记录db.First(&amp;amp;user)//// SELECT * FROM users ORDER BY id LIMIT 1;// 随机取一条记录db.Take(&amp;amp;user)//// SELECT * FROM users LIMIT 1;// 通过主键查询最后一条记录db.Last(&amp;amp;user)//// SELECT * FROM users OR">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-10-24T20:35:50.000Z">
+<meta property="og:updated_time" content="2019-12-06T06:55:20.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查询">
 <meta name="twitter:description" content="查询//通过主键查询第一条记录db.First(&amp;amp;user)//// SELECT * FROM users ORDER BY id LIMIT 1;// 随机取一条记录db.Take(&amp;amp;user)//// SELECT * FROM users LIMIT 1;// 通过主键查询最后一条记录db.Last(&amp;amp;user)//// SELECT * FROM users OR">
@@ -163,7 +163,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> Result <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="keyword">string</span></span><br><span class="line">    Age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result Result</span><br><span class="line">db.Table(<span class="string">"users"</span>).Select(<span class="string">"name, age"</span>).Where(<span class="string">"name = ?"</span>, <span class="number">3</span>).Scan(&amp;result)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原生SQL</span></span><br><span class="line">db.Raw(<span class="string">"SELECT name, age FROM users WHERE name = ?"</span>, <span class="number">3</span>).Scan(&amp;result)</span><br></pre></td></tr></table></figure>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-10-24T20:35:50.000Z" itemprop="dateModified">最后更新于 2019-10-24</time>
+                <time class="article-footer-updated" datetime="2019-12-06T06:55:20.931Z" itemprop="dateModified">最后更新于 2019-12-06</time>
 <a href="create.html" class="article-footer-prev" title="创建"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="update.html" class="article-footer-next" title="更新"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -172,7 +172,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
-              <div id="sidebar-ad-wrapper" class="tagmanager_ad"></div>
               <strong class="sidebar-title">内容</strong>
               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查询"><span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Where-条件"><span class="toc-text">Where 条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通-SQL"><span class="toc-text">普通 SQL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Struct-amp-Map"><span class="toc-text">Struct &amp; Map</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Not-条件"><span class="toc-text">Not 条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Or-条件"><span class="toc-text">Or 条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inline-Condition-内联条件"><span class="toc-text">Inline Condition 内联条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extra-Querying-option-其它查询选项"><span class="toc-text">Extra Querying option 其它查询选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FirstOrInit"><span class="toc-text">FirstOrInit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Attrs"><span class="toc-text">Attrs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Assign"><span class="toc-text">Assign</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FirstOrCreate"><span class="toc-text">FirstOrCreate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Attrs-1"><span class="toc-text">Attrs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Assign-1"><span class="toc-text">Assign</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Advanced-Query-高级查询"><span class="toc-text">Advanced Query 高级查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SubQuery-子查询"><span class="toc-text">SubQuery 子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择字段"><span class="toc-text">选择字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数量"><span class="toc-text">数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#偏移"><span class="toc-text">偏移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总数"><span class="toc-text">总数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Group-amp-Having"><span class="toc-text">Group &amp; Having</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接"><span class="toc-text">连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pluck"><span class="toc-text">Pluck</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扫描"><span class="toc-text">扫描</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
@@ -193,9 +192,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <footer id="footer" class="wrapper">
   <div class="inner">
     <div id="footer-copyright">
-      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">Jinzhu</a><br>
+      &copy; 2013~2019 <a href="https://github.com/fanyer" target="_blank">fanyer</a><br>
       Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
-      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
+      <a href="https://github.com/" target="_blank">Source Code of this site</a>
     </div>
     <div id="footer-links">
       <a href="https://twitter.com/iofanyer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
