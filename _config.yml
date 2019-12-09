@@ -14,7 +14,7 @@ source_dir: pages
 
 # URL
 url: http://rva.js.org/
-root: /rva/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
